@@ -5,13 +5,11 @@ ARG CONFIG $CONFIG
 
 ARG CONFIG=dev
 
-WORKDIR /app
 
 COPY client /app/client/
 COPY backend /app/backend/
 
-
-RUN cd client
+WORKDIR /app/client
 RUN echo $CONFIG
 RUN npm install --legacy-peer-deps
 
@@ -21,13 +19,13 @@ FROM node:latest
 ARG CONFIG $CONFIG
 ENV CONFIG $CONFIG
 
-WORKDIR /app
+COPY --from=BUILD /app/backend /app/backend/
+COPY --from=BUILD /app/client/dist /app/backend/dist/
 
-COPY --from=BUILD /app/server /app/server/
-COPY --from=BUILD /app/dist /app/server/dist/
+WORKDIR /app/backend
 
-RUN cd server && npm install
+RUN npm install
 
 EXPOSE 3012
 
-CMD ["node", "/app/server/server.js"]
+CMD ["npm", "start"]
