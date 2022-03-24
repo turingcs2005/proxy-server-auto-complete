@@ -26,6 +26,6 @@ WORKDIR /app/backend
 
 RUN npm install
 
-EXPOSE 3012
+EXPOSE 3000
 
 CMD ["npm", "start"]
