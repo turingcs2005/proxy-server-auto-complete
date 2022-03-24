@@ -1,2 +1,49 @@
 client/node_modules
 backend/node_modules
+
+
+# From angular template generation.
+# compiled output
+client/dist
+client/tmp
+client/out-tsc
+# Only exists if Bazel was run
+client/bazel-out
+
+# dependencies
+client/node_modules
+
+# profiling files
+clientchrome-profiler-events*.json
+
+# IDEs and editors
+client/.idea
+client/.project
+client/.classpath
+client/.c9/
+client/*.launch
+client/.settings/
+client/*.sublime-workspace
+
+# IDE - VSCode
+client/.vscode/*
+client/!.vscode/settings.json
+client/!.vscode/tasks.json
+client/!.vscode/launch.json
+client/!.vscode/extensions.json
+client/.history/*
+
+# misc
+client/.angular/cache
+client/.sass-cache
+client/connect.lock
+client/coverage
+client/libpeerconnection.log
+client/npm-debug.log
+client/yarn-error.log
+client/testem.log
+client/typings
+
+# System Files
+client/.DS_Store
+client/Thumbs.db
