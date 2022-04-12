@@ -1,0 +1,22 @@
+<button mat-fab class="float-button" matTooltip="A floating button at lower-right">
+	<mat-icon>favorite</mat-icon>
+</button> &nbsp; &nbsp;
+
+<br>
+
+<div class="container" (mouseenter)="mouseOver()" (mouseleave)="mouseOut()"
+	matTooltip="A menubar that disappears on mouse away, reducing visual clutter.">
+
+    <mat-toolbar [class.hidden]="hidden" class="float-toolbar transparent">
+        <button mat-mini-fab><mat-icon>face</mat-icon></button> &nbsp;
+        <button mat-mini-fab><mat-icon>lightbulb</mat-icon></button> &nbsp;
+        <button mat-mini-fab><mat-icon>date_range</mat-icon></button> &nbsp;
+        <button mat-mini-fab><mat-icon>build</mat-icon></button> &nbsp;
+        <button mat-mini-fab><mat-icon>favorite</mat-icon></button> &nbsp;
+    </mat-toolbar>
+
+    <div class="content">
+			This paragraph has a mouse-over menubar. I saw in Microsoft Teams this nice little utility and rebuilt it. (Teams is built in Angular.) 
+			Mouse-over menubars reduce visual clutter in UI (user interface): a menubar is displayed only when needed.
+    </div>
+</div>

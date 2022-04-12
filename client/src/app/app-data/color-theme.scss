@@ -1,0 +1,36 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$palette-primary: mat-palette($mat-indigo);
+$palette-accent:  mat-palette($mat-pink);
+$palette-warn:    mat-palette($mat-red);
+
+$primary: mat-color($palette-primary);
+$accent: mat-color($palette-accent);
+$warn: mat-color($palette-warn);
+
+$primary50: mat-color($palette-primary, 50);
+$primary100: mat-color($palette-primary, 100);
+$primary200: mat-color($palette-primary, 200);
+$primary300: mat-color($palette-primary, 300);
+$primary400: mat-color($palette-primary, 400);
+$primary500: mat-color($palette-primary, 500); // this is identical to primary, which defaults to 500
+$primary600: mat-color($palette-primary, 600);
+$primary700: mat-color($palette-primary, 700);
+$primary800: mat-color($palette-primary, 800);
+$primary900: mat-color($palette-primary, 900);
+
+
+$accent50: mat-color($palette-accent, 50);
+$accent100: mat-color($palette-accent, 100);
+$accent200: mat-color($palette-accent, 200);
+$accent300: mat-color($palette-accent, 300);
+$accent400: mat-color($palette-accent, 400);
+$accent500: mat-color($palette-accent, 500); // this is identical to accent, which defaults to 500
+$accent600: mat-color($palette-accent, 600);
+$accent700: mat-color($palette-accent, 700);
+$accent800: mat-color($palette-accent, 800);
+$accent900: mat-color($palette-accent, 900);
+
+// 5% transparency
+$accent100-5: mat-color($palette-accent, 100, .05);

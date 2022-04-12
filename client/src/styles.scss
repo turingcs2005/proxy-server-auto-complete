@@ -1,1 +1,104 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'src/app/app-data/color-theme.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.padded {
+  padding: 20px;
+}
+
+.narrow-input {
+  width: 100px !important;
+}
+
+.medium-input {
+  width: 150px !important;
+}
+
+.medium-plus1-input {
+  width: 200px !important;
+}
+
+.medium-plus2-input {
+  width: 250px !important;
+}
+
+.long-input {
+  width: 400px !important;
+}
+
+.form-section {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.with-icon {
+  display: flex;
+  vertical-align: middle;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.link {
+  @extend .pointer;
+  color: $accent;
+}
+
+.left-padded {
+  padding: 0 0 0 40px;
+}
+
+.width-75p {
+  width: 75%;
+}
+
+.emphasize {
+  font-weight: bold;
+  color: $primary500;
+}
+
+.warn {
+  font-weight: bold;
+  color: $warn;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  .mat-table {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 1rem;
+      display: table;
+      border-collapse: collapse;
+      margin: 0px;
+  }
+  .mat-row,
+  .mat-header-row {
+      display: table-row;
+  }
+  .mat-cell,
+  .mat-header-cell {
+      word-wrap: initial;
+      display: table-cell;
+      padding: 0px 5px;
+      line-break: unset;
+      width: auto;
+      white-space: nowrap;
+      overflow: hidden;
+      vertical-align: middle;
+      max-width: 200px;
+  }
+}
+
+.debug {
+  padding: 10px;
+}
