@@ -1,31 +1,30 @@
-ARG CONFIG
+# build front end
+FROM node:16-alpine AS client_build
 
-FROM node:latest as BUILD
-ARG CONFIG $CONFIG
+WORKDIR /app 
 
-ARG CONFIG=dev
+COPY ./client /app/
 
+RUN npm install 
+RUN node_modules/.bin/ng build
 
-COPY client /app/client/
-COPY backend /app/backend/
+# build back end
+FROM node:16-alpine AS server_build
 
-WORKDIR /app/client
-RUN echo $CONFIG
-RUN npm install --legacy-peer-deps
+WORKDIR /app
 
-RUN npx ng build --configuration $CONFIG
+COPY ./server /app/
+COPY --from=client_build /app/dist/client /app/dist
 
-FROM node:latest
-ARG CONFIG $CONFIG
-ENV CONFIG $CONFIG
+RUN npm install --production 
 
-COPY --from=BUILD /app/backend /app/backend/
-COPY --from=BUILD /app/client/dist /app/backend/dist/
+# build docker
+FROM alpine 
 
-WORKDIR /app/backend
+WORKDIR /app
 
-RUN npm install
+RUN apk add --no-cache nodejs
 
-EXPOSE 3000
+COPY --from=server_build /app ./
 
-CMD ["npm", "start"]
+CMD ["node", "./bin/www"]

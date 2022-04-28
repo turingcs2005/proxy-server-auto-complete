@@ -19,11 +19,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.static(path.join(__dirname, '/dist/client')));
+app.use(express.static(path.join(__dirname, '/dist')));
 
 app.all('/*', function(req, res, next) {
       // Just send the index.html for other files to support HTML5Mode
-  res.sendFile('index.html', { root: __dirname + '/dist/client' });
+  res.sendFile('index.html', { root: __dirname + '/dist' });
 });
 
 
