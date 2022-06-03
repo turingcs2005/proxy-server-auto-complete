@@ -1,0 +1,24 @@
+# Install "Rest Client" VSCode Extention by "Huachao Mao"
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+# Remember to separate each call with "###" (three # symbols)
+
+###
+# replace with url to backend server below
+@baseUrl= url.com:port
+
+
+###
+# read record by id number
+get {{baseUrl}}/api/read/25
+
+###
+# create record
+post {{baseUrl}}/api/create
+Content-Type: application/json
+
+{
+ "name": "John Smith",
+ "age": 34,
+ "location": "New York City"
+}
