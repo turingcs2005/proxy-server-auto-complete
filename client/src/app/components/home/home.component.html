@@ -1,2 +1,8 @@
-<p class="mat-h2">Your home page</p>
-<p>Some blurbs</p>
+<p class="mat-h2">Welcome to Angular &amp; Node.js Template</p>
+<p>List of tools</p>
+
+<ul>
+	<li *ngFor="let x of sharedTools">
+		<span class="emphasize">{{x.name}}</span>: 
+		<span class="highlight">{{x.location}}</span> {{x.description}}</li>
+</ul>

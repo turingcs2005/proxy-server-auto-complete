@@ -60,6 +60,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: $primary500;
 }
 
+.highlight {
+  color: $accent500;
+}
+
 .warn {
   font-weight: bold;
   color: $warn;

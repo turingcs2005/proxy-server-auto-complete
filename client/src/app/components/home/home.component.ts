@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { sharedTools } from 'src/app/app-data/shared-tools';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  sharedTools = sharedTools;
+  
   constructor() { }
 
   ngOnInit(): void {
