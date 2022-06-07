@@ -15,5 +15,7 @@ export const sharedTools = [
 	new SharedTools('snack-bar', 'client/src/app/modules/shared/misce/snack-bar', 'pop-up bar at the bottom to display notification \
 	for a few seconds'),
 	new SharedTools('spinner', 'client/src/app/modules/shared/misce/spinner', 'a spinner displayed when app is retrieving data'),
-	new SharedTools('tree', 'client/src/app/modules/shared/misce/tree', 'a visual tree for data structure documentation')
+	new SharedTools('tree', 'client/src/app/modules/shared/misce/tree', 'a visual tree for data structure documentation'),
+	new SharedTools('invalid controls', 'client/src/app/services/form-tools', 'log all invalid form controls in browser console'),
+	new SharedTools('tree traversing $ -> #', 'client/src/app/services/form-tools', 'recursively convert all $ string to number in an object'),
 ];
