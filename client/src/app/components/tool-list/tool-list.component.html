@@ -2,6 +2,12 @@
 
 <div class="mat-elevation-z8" *ngIf="dataSource">
   <div class="table-responsive">
+
+    <mat-form-field appearance="outline"> 
+      <mat-label>&nbsp; Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="filter on text..." #input>
+    </mat-form-field>
+
     <table mat-table #policyTable [dataSource]="dataSource" matSort class="full-width mat-elevation-z8">
 
       <ng-container *ngFor = "let col of displayedColumns" [matColumnDef]="col">
@@ -15,5 +21,5 @@
     </table>
   </div>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" [showFirstLastButtons]="true"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" [showFirstLastButtons]="true"></mat-paginator>
 </div>

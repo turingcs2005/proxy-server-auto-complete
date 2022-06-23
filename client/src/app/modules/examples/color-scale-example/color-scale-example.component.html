@@ -1,0 +1,25 @@
+<div class="mat-h2">Color scale</div>
+
+<!-- *** COLOR SCALE BAR *** -->
+<!-- 
+    Documentation: https://www.npmjs.com/package/ng-color-scale/v/0.1.8
+
+    Required packages are d3 and ng-color-scale
+    Make sure to import NgColorScaleModule on your AppModule and on the module the component resides
+ -->
+
+<a href="https://www.npmjs.com/package/ng-color-scale/v/0.1.8">Visit Documentation</a>
+
+ <div class="mediumwidth">
+    <ng-color-scale
+        [data]="18000"
+        [leftLabel]="'Low'"
+        [rightLabel]="'Very High'"
+        [middleLabel]="'Average'"
+        [minVal]="0"
+        [maxVal]="40000"
+        [colorList]="['green','yellow','red']"
+        [displayMeta]="'Your mileage is ' + '<b>Average<b>'"
+    >
+    </ng-color-scale>
+</div>
