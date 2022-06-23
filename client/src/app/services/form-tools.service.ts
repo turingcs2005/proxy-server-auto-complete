@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AbstractControl, FormBuilder, Validators, FormGroup, FormArray } from '@angular/forms';
+import { AbstractControl, FormBuilder, Validators, UntypedFormGroup, FormArray } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ export class FormToolsService {
 
   constructor() { }
 
-  findInvalidControls(f: FormGroup ) {
+  findInvalidControls(f: UntypedFormGroup ) {
     const invalid = [];
     const controls = f.controls;
     for (const name in controls) {

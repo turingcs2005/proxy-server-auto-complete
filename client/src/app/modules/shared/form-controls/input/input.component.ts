@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
 
 @Component({
@@ -11,7 +11,7 @@ export class InputComponent implements OnInit {
 
   @Input() show: boolean = true;
   @Input() label = '';
-  @Input() control = new FormControl();
+  @Input() control = new UntypedFormControl();
   @Input() toolTip: string = '';
   @Input() size: string  = '';
   @Input() icon = '';

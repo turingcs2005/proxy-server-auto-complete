@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-single-choice',
@@ -11,7 +11,7 @@ export class SingleChoiceComponent implements OnInit {
   @Input() show = true;
   @Input() label = '';
   @Input() choices: string[] = [];
-  @Input() control = new FormControl();
+  @Input() control = new UntypedFormControl();
   @Input() size = '';
 
   constructor() { }

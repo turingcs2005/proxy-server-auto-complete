@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-radio-group',
@@ -10,7 +10,7 @@ export class RadioGroupComponent implements OnInit {
   
   @Input() show: boolean = true;
   @Input() label = '';
-  @Input() control = new FormControl();
+  @Input() control = new UntypedFormControl();
   @Input() values = [{value: 'default', checked: true}];
   @Input() toolTip: string = '';
   
