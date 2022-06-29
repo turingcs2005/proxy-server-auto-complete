@@ -132,6 +132,10 @@ import { DefaultValuePipe } from './default-value.pipe';
     TreeComponent,
     SnackBarComponent,
     RadioGroupComponent,
+    InputComponent,
+    DateComponent,
+    MultiChoicesComponent,
+    SingleChoiceComponent,
 
      // exported pipes
     DefaultValuePipe
