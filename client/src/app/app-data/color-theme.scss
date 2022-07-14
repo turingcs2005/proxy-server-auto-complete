@@ -89,6 +89,8 @@ $accent300: mat-color($custom-theme-accent, 300);
 $accent500: mat-color($custom-theme-accent, 500);
 $accent800: mat-color($custom-theme-accent, 800);
 
+$accent100-5: mat-color($custom-theme-accent, 100, 0.05);
+
 $warn: mat-color($custom-theme-warn, 500);
 
 $custom-theme-theme: mat-light-theme((
