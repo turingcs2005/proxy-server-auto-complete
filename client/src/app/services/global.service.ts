@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
 import { DisplayType } from '../app-data/app-models';
-import { CurrencyPipe } from '@angular/common';
 import { UntypedFormGroup } from '@angular/forms';
-=======
 import { CurrencyPipe } from '@angular/common';
->>>>>>> 6e1f2f89745c30205ecc66d8cdff47c608c8be79
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +15,7 @@ export class GlobalService {
     private currencyPipe: CurrencyPipe
   ) { }
 
-<<<<<<< HEAD
   // convert zero, null, undefined, '', false to zero
-=======
->>>>>>> 6e1f2f89745c30205ecc66d8cdff47c608c8be79
   toZero(val: any) {
     return val ? val : 0;
   }
@@ -52,7 +45,6 @@ export class GlobalService {
     }
   }
 
-<<<<<<< HEAD
   /**
    * after loading a name-value pair from database, patch the value to a reactive form
    */
@@ -68,6 +60,4 @@ export class GlobalService {
     }
   }
 
-=======
->>>>>>> 6e1f2f89745c30205ecc66d8cdff47c608c8be79
 }
