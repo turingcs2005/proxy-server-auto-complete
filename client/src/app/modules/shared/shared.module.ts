@@ -30,6 +30,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatAutocomplete, MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -55,7 +56,6 @@ import { DefaultValuePipe } from './default-value.pipe';
        TreeComponent,
        SnackBarComponent,
        RadioGroupComponent,
-
        DefaultValuePipe
   ],
   imports: [
@@ -88,6 +88,7 @@ import { DefaultValuePipe } from './default-value.pipe';
     MatGridListModule,
     MatSlideToggleModule,
     MatTreeModule,
+    MatAutocompleteModule,
 
     FormsModule,
     ReactiveFormsModule,
@@ -122,6 +123,7 @@ import { DefaultValuePipe } from './default-value.pipe';
     MatGridListModule,
     MatSlideToggleModule,
     MatTreeModule,
+    MatAutocompleteModule,
 
     FormsModule,
     ReactiveFormsModule,

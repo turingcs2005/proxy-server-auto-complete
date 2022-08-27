@@ -1,1 +1,31 @@
 <p class="mat-h2">Node.js Proxy Server; Angular Material Auto Complete</p>
+
+<p>A simple form</p>
+
+<form [formGroup]="intakeForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>State</mat-label>
+        <input matInput 
+        [formControl]="$any(intakeForm.get('state'))"
+        [matAutocomplete]="auto1"
+        >
+        <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+            <mat-option *ngFor="let option of filteredStateOptions | async" [value]="option">
+            {{option}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field> <br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+        <input matInput 
+        [formControl]="$any(intakeForm.get('city'))"
+        [matAutocomplete]="auto2"
+        >
+        <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete">
+            <mat-option *ngFor="let option of filteredCityOptions | async" [value]="option">
+            {{option}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field> 
+</form>

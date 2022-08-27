@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { DisplayType } from '../app-data/app-models';
 import { UntypedFormGroup } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
+  baseUrl = environment.baseUrl;
   snackBarText = '';
   currencyCheck = DisplayType.currencyCheck;
   dateCheck = DisplayType.dateCheck;
