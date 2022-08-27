@@ -11,10 +11,14 @@ import { ApiService } from 'src/app/services/api.service';
 export class HomeComponent implements OnInit {
 
   intakeForm: FormGroup = new FormGroup({});
+  
   stateList: string[] = [''];
   cityList: string[] = [''];
+  zipCodeList: string[] = [''];
+
   filteredStateOptions: Observable<string[]>;
   filteredCityOptions: Observable<string[]>;
+  filteredZipCodeOptions: Observable<string[]>;
 
   constructor(
     private fb: FormBuilder,
@@ -25,7 +29,8 @@ export class HomeComponent implements OnInit {
     // form group
     this.intakeForm = this.fb.group({
       state: [''],
-      city: ['']
+      city: [''],
+      zipCode: ['']
     });
 
     // get state list via API call
@@ -44,8 +49,8 @@ export class HomeComponent implements OnInit {
           // get city list via API call
           this.api.getCityList(v).subscribe(
             {
-              next: v => { 
-                this.cityList = v.cities; 
+              next: data => { 
+                this.cityList = data.cities; 
               },
               error: e => {console.error(e)},
               complete: () => {console.info(`City list acquisition for ${v} complete.`)}
@@ -57,6 +62,25 @@ export class HomeComponent implements OnInit {
       complete: () => {console.info('State value changed.')}
     });
 
+    this.intakeForm.get('city')?.valueChanges.subscribe({
+      next: v => {
+        // if state is a valid US state and city is a valid US city
+        if (this.stateList.includes(this.intakeForm.get('state')?.value) && this.cityList.includes(v)) {
+          this.api.getZipCodeList(this.intakeForm.get('state')?.value, v).subscribe(
+            {
+              next: data => {
+                this.zipCodeList = data.zip_codes;
+              },
+              error: e => {console.error(e)},
+              complete: () => {console.info(`ZIP code list acquisition for ${v} complete.`)}
+            }
+          )
+        }
+      },
+      error: e => {console.error(e)},
+      complete: () => {console.info('City value changed.')}
+    });
+
     this.filteredCityOptions = this.intakeForm.get('city')!.valueChanges.pipe(
       startWith(''),
       map(value => this._filterCity(value || '')),
@@ -66,6 +90,13 @@ export class HomeComponent implements OnInit {
       startWith(''),
       map(value => this._filterState(value || '')),
     );
+    
+    this.filteredZipCodeOptions = this.intakeForm.get('zipCode')!.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filterZipCode(value || '')),
+    );
+
+
   }
 
   private _filterState(value: string): string[] {
@@ -76,6 +107,11 @@ export class HomeComponent implements OnInit {
   private _filterCity(value: string): string[] {
     const filterValue = value.toLowerCase();
     return this.cityList.filter(option => option.toLowerCase().startsWith(filterValue));
+  }
+
+  private _filterZipCode(value: string): string[] {
+    const filterValue = value;
+    return this.zipCodeList.filter(option => option.startsWith(filterValue));
   }
 
   onSubmit() {
