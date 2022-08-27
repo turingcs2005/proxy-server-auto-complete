@@ -1,7 +1,3 @@
-# Install "Rest Client" VSCode Extention by "Huachao Mao"
-# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
-
-# Remember to separate each call with "###" (three # symbols)
 
 ###
 # replace with url to backend server below
@@ -9,6 +5,12 @@
 
 ###
 get {{baseUrl}}/validateCity/MA/Fall%20River
+
+###
+get {{baseUrl}}/validatePostCode/02116
+
+###
+get {{baseUrl}}/cityArray/MA
 
 ###
 get http://localhost:3000/proxy-api/geography/validateCity/MA/Boston
