@@ -5,12 +5,26 @@
 
 ###
 # replace with url to backend server below
-@baseUrl= url.com:port
-
+@baseUrl= http://localhost:5002/api/geography 
 
 ###
-# read record by id number
-get {{baseUrl}}/api/read/25
+get {{baseUrl}}/validateCity/MA/Fall%20River
+
+###
+get http://localhost:3000/proxy-api/geography/validateCity/MA/Boston
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ###
 # create record

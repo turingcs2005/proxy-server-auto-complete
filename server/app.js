@@ -1,13 +1,15 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
-var app = express();
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,8 +20,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(express.static(path.join(__dirname, '/dist')));
+
+app.use('/proxy-api/geography', createProxyMiddleware({
+  target: 'http://localhost:5002/api/geography',
+  changeOrigin: true,
+  pathRewrite: {
+    "^/proxy-api/geography": ""
+  }
+}));
 
 app.all('/*', function(req, res, next) {
       // Just send the index.html for other files to support HTML5Mode
