@@ -115,4 +115,4 @@ server/.env
 server/.next
 
 # angular directory
-server/app/dist/
+server/dist/

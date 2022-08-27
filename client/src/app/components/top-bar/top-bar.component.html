@@ -14,16 +14,4 @@
 
 <mat-menu #appMenu="matMenu">
   <button mat-menu-item [routerLink]="['/']"><mat-icon>home</mat-icon>Home</button>
-  <button mat-menu-item [routerLink]="['/tool-list']"><mat-icon>construction</mat-icon>Tools</button>
-  <button mat-menu-item [matMenuTriggerFor]="exampleMenu">Examples</button>
-  <button mat-menu-item>Item 2</button>
-  <button mat-menu-item>Item 3</button>
-</mat-menu>
-
-<mat-menu #exampleMenu="matMenu">
-  <button mat-menu-item [routerLink]="['/examples/menu-and-button']">Menu and Button</button>
-  <button mat-menu-item [routerLink]="['/examples/snack-bar-example']">Snackbar</button>
-  <button mat-menu-item [routerLink]="['/examples/spinner-example']">Spinner</button>
-  <button mat-menu-item [routerLink]="['/examples/tree-example']">Tree</button>
-  <button mat-menu-item [routerLink]="['/examples/color-scale-example']">Color Scale</button>
 </mat-menu>
